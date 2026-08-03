@@ -6,7 +6,7 @@ session_start();
 require __DIR__ . '/../db.php';
 
 if (!isset($_SESSION['user_id'], $_SESSION['role'])) {
-    header("Location: ../middle_login.php");
+    header("Location: procurement.php");
     exit;
 }
 
@@ -272,9 +272,11 @@ $categories = $pdo->query("SELECT id,name FROM categories")->fetchAll();
 $brands = $pdo->query("SELECT id,name FROM brands")->fetchAll();
 ?>
 
-<!-- KEEP YOUR HTML + JS EXACTLY AS IT WAS BELOW -->
 
 
+/* =========================
+   HTML SECTION
+========================= */
 
 
 <!DOCTYPE html>
@@ -291,15 +293,15 @@ $brands = $pdo->query("SELECT id,name FROM brands")->fetchAll();
 <div class="top-nav">
    <a href="../sales_reports/procurement/procurement_sales_dashboard.php">
     view sales</a>
-    <a href="products.php">📦 Products</a>
-    <a href="brands_categories.php">📂brands and Categories</a>
+    <a href="products.php">Products</a>
+    <a href="brands_categories.php">brands and Categories</a>
     
     <a href="../sales_reports/procurement/reconciliation_dashboard.php">
     reconciliation_ Dashboard</a>
     <a href="../sales_reports/procurement/stock_reconciliation.php">
     reconcile stock</a>
     
-    <a href="../logout.php">🚪 Logout</a>
+    <a href="../logout.php"> Logout</a>
 </div>
 
 
@@ -528,7 +530,7 @@ $brands = $pdo->query("SELECT id,name FROM brands")->fetchAll();
 
 <td>
     <button type="submit" name="action" value="edit_product">
-        💾 Save
+         Save
     </button>
 </td>
 
@@ -566,7 +568,7 @@ setupArrowKeys();
 
 
 // ================================
-// AUTO CALCULATE TAX + FINAL PRICE
+// AUTO CALCULATE TAX AND THE FINAL PRICE
 // ================================
 
 function setupAutoCalculation() {
