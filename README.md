@@ -30,15 +30,14 @@ This project was developed as a reusable inventory management component that can
 
 The system implements role-based access:
 
-**Administrator**
+**Administrator and Procurement**
 - Add products
 - Edit products
 - Permanently delete products
 - Manage product information
 
 **Employee**
-- View products
-- Temporarily deactivate products
+- View products and sell via POS. Employees cant access this file
 
 ## Security Implementation
 
